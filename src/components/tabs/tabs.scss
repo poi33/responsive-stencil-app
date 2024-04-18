@@ -1,0 +1,56 @@
+:host {
+    width: 100%;
+}
+
+.tabs {
+    width: 100%;
+}
+
+.tabs__nav {
+    display: grid;
+    grid-template-columns: auto;
+    // To display outlines and scroll bar
+    margin: 0px -2px;
+    padding: 2px 2px 6px 2px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    h1 {
+        display: inline-block;
+    }
+
+    &[active] {
+        border-bottom: 1px solid var(--res-green);
+    }
+}
+
+.tabs__link {
+    display: grid;
+    background-color: var(--res-blue-bg);
+    grid-row: 1;
+    min-width: 100px;
+    border: 0px solid transparent;
+    border-right: 1px solid black;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    scroll-snap-align: center;
+
+    &:focus {
+        z-index: 10;
+    }
+
+    &--active {
+        border-bottom: 2px solid green;
+    }
+
+    &:first-child {
+        border-left: 1px solid black;
+    }
+}
+
+.tabs__frame {
+    height: 500px;
+    overflow: auto;
+    border: 1px solid black;
+}
