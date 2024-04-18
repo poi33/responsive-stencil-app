@@ -25,7 +25,9 @@ export const config: Config = {
     browserHeadless: "new",
   },
   plugins: [
-    sass()
+    sass({
+      injectGlobalPaths: ['src/globals/variables.scss']
+    })
   ],
   globalStyle: 'src/globals/global.scss'
 };

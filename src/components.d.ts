@@ -19,6 +19,7 @@ export namespace Components {
     }
     interface ResTabs {
         "active": string;
+        "align": string;
     }
 }
 declare global {
@@ -67,6 +68,7 @@ declare namespace LocalJSX {
     }
     interface ResTabs {
         "active"?: string;
+        "align"?: string;
     }
     interface IntrinsicElements {
         "res-card": ResCard;

@@ -4,48 +4,99 @@
 
 .tabs {
     width: 100%;
+    padding-top: 1rem;
+
+    @media (min-width: $breakpoint) {
+        &--vertical {
+            display: grid;
+            grid-template-columns: 100px calc(100% - 100px);
+            justify-items: stretch;
+
+            .tabs__frame {
+                overflow-x: auto;
+            }
+        }
+    }
+}
+
+.tabs__header {
+    z-index: 1;
 }
 
 .tabs__nav {
     display: grid;
     grid-template-columns: auto;
-    // To display outlines and scroll bar
-    margin: 0px -2px;
-    padding: 2px 2px 6px 2px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
 
     h1 {
         display: inline-block;
     }
 
-    &[active] {
-        border-bottom: 1px solid var(--res-green);
+    &--vertical {
+        grid-template-rows: auto;
     }
 }
 
 .tabs__link {
     display: grid;
     background-color: var(--res-blue-bg);
-    grid-row: 1;
     min-width: 100px;
-    border: 0px solid transparent;
-    border-right: 1px solid black;
-    justify-content: center;
+    border: none;
+    justify-content: stretch;
     cursor: pointer;
     z-index: 1;
-    scroll-snap-align: center;
+    padding: 0;
+
+    h1 {
+        box-sizing: border-box;
+        padding: 1rem 0;
+        width: 100%;
+        margin: 0;
+        border-bottom: 2px solid black;
+    }
 
     &:focus {
+        outline: 0;
         z-index: 10;
+
+        h1 {
+            outline: 4px solid var(--res-orange);
+        }
     }
 
     &--active {
-        border-bottom: 2px solid green;
+        box-shadow: inset 0 4px var(--res-blue-active);
     }
 
-    &:first-child {
-        border-left: 1px solid black;
+    @media (min-width: $breakpoint) {
+        grid-row: 1;
+
+        h1 {
+            border-bottom: 0;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+
+        &:first-of-type h1 {
+            box-shadow: -1px 0 black;
+        }
+
+        &:last-of-type h1 {
+            box-shadow: 1px 0 black;
+        }
+
+        &--vertical {
+            width: 100px;
+            grid-row: auto;
+
+            h1 {
+                border: none;
+                border-bottom: 1px solid black;
+            }
+
+            &:first-of-type h1, &:last-of-type h1, h1 {
+                box-shadow: none;
+            }
+        }
     }
 }
 

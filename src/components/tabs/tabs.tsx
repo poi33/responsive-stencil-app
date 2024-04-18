@@ -18,6 +18,8 @@ export class Tabs {
 
   @Prop() active: string = "0";
 
+  @Prop() align: string = "horizontal";
+
   pressedHeading(nextActive: number) {
     this.host.setAttribute('active', nextActive.toString());
   }
@@ -32,19 +34,30 @@ export class Tabs {
       element.setAttribute('active', (index == activeIndex).toString());
     });
 
-    return <section class="tabs">
+    return <section class={classNames([
+      "tabs",
+      this.align == 'vertical' && 'tabs--vertical'
+    ])}>
       <header class="tabs__header">
-        <nav class="tabs__nav" dir="ltr">
+        <nav class={
+          classNames([
+            "tabs__nav",
+            this.align == 'vertical' && 'tabs__nav--vertical'
+          ])}
+            dir="ltr">
           {
             this.children.map((element, index) => {
               const name = element.getAttribute("name") || '';
 
               return <button
+                id={`tab-btn-${index}`}
                 role="tab"
                 aria-selected={(index == activeIndex).toString()}
+                aria-controls="tab-frame"
                 class={classNames([
                     'tabs__link',
-                    index == activeIndex && 'tabs__link--active'
+                    index == activeIndex && 'tabs__link--active',
+                    this.align == 'vertical' && 'tabs__link--vertical'
                   ])}
                 onClick={() => this.pressedHeading(index)}
               >
@@ -54,9 +67,9 @@ export class Tabs {
           }
         </nav>
       </header>
-      <section>
+      <div id="tab-frame" role="tabpanel" aria-labelledby={`tab-btn-${activeIndex}`}>
         <slot></slot>
-      </section>
+      </div>
     </section>
   }
 }
