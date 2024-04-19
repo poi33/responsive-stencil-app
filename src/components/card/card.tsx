@@ -21,6 +21,7 @@ export class CardLayout {
 
     @Prop() headline: string; //required
 
+
     render() {
         return <article class="card">
             {this.imageurl &&
@@ -32,7 +33,7 @@ export class CardLayout {
                 alt={this.imagealt} />
             }
             <div class="card__text">
-                <h1 class="card__headline">{this.headline}</h1>
+                <h3 class="card__headline">{this.headline}</h3>
                 {this.description &&
                     <p class="card__description">{this.description}</p>
                 }

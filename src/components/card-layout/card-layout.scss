@@ -3,4 +3,12 @@
     grid-template-columns: auto;
     justify-items: stretch;
     gap: 30px;
+
+    @media (min-width: $breakpoint) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-large) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

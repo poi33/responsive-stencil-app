@@ -10,12 +10,8 @@
 
     @media (min-width: $breakpoint) {
         &--vertical {
-            grid-template-columns: 100px calc(100% - 100px);
+            grid-template-columns: auto 1fr;
             justify-items: stretch;
-
-            .tabs__frame {
-                overflow-x: auto;
-            }
         }
     }
 }
@@ -27,6 +23,10 @@
 .tabs__nav {
     display: grid;
     grid-template-columns: auto;
+    overflow-x: auto;
+    padding: 4px;
+    margin: 0 -4px;
+
 
     h1 {
         display: inline-block;
@@ -34,13 +34,17 @@
 
     &--vertical {
         grid-template-rows: auto;
+        margin: -4px 0;
+    }
+
+    &:focus-visible {
+        outline: 4px solid var(--res-orange);
     }
 }
 
 .tabs__link {
     display: grid;
     background-color: var(--res-blue-bg);
-    min-width: 100px;
     border: none;
     justify-content: stretch;
     cursor: pointer;
@@ -49,19 +53,15 @@
 
     h1 {
         box-sizing: border-box;
-        padding: 1rem 0;
+        padding: 1rem 10px;
         width: 100%;
         margin: 0;
         border-bottom: 2px solid black;
     }
 
     &:focus {
-        outline: 0;
+        outline: 4px solid var(--res-orange);
         z-index: 10;
-
-        h1 {
-            outline: 4px solid var(--res-orange);
-        }
     }
 
     &--active {
@@ -69,6 +69,7 @@
     }
 
     @media (min-width: $breakpoint) {
+        text-wrap: nowrap;
         grid-row: 1;
 
         h1 {
@@ -86,7 +87,8 @@
         }
 
         &--vertical {
-            width: 100px;
+            text-wrap: wrap;
+            width: 200px;
             grid-row: auto;
 
             h1 {
@@ -104,5 +106,4 @@
 .tabs__frame {
     height: 500px;
     overflow: auto;
-    border: 1px solid black;
 }

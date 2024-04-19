@@ -38,8 +38,7 @@ export class Tabs {
           classNames([
             "tabs__nav",
             this.align == 'vertical' && 'tabs__nav--vertical'
-          ])}
-            dir="ltr">
+          ])}>
           {
             childElements.map((element, index) => {
               const name = element.getAttribute("name") || '';
@@ -62,7 +61,7 @@ export class Tabs {
           }
         </nav>
       </header>
-      <div id="tab-frame" role="tabpanel" aria-labelledby={`tab-btn-${activeIndex}`}>
+      <div id="tab-frame" class="tabs__frame" role="tabpanel" aria-labelledby={`tab-btn-${activeIndex}`}>
         <slot></slot>
       </div>
     </div>

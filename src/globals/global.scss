@@ -8,11 +8,25 @@
     --res-black-bg: #dedfe7;
     --res-orange: #f07850;
     --res-breakpoint: 600px;
+
+    scroll-behavior: smooth;
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+.navigation {
+    a {
+        color: black;
+        display: block;
+        font-size: 1.2rem;
+
+        &:focus {
+            outline: 4px solid var(--res-orange);
+        }
+    }
 }
 
 .headline {
@@ -21,7 +35,6 @@
 
 .section {
     display: block;
-    padding: 10px 15px;
 
     &--blue-bg {
         background-color: var(--res-blue-bg);
@@ -34,8 +47,26 @@
     &--green-bg {
         background-color: var(--res-green-bg);
     }
+}
+
+.page-header,
+.section {
+    padding: 10px 15px;
 
     @media (min-width: $breakpoint) {
         padding: 30px 10%;
+    }
+}
+
+.skip-content {
+    display: inline-block;
+    text-wrap: nowrap;
+    width: 0px;
+    overflow-x: hidden;
+
+    &:focus {
+        width: auto;
+        visibility: visible;
+        outline: 4px solid var(--res-orange);
     }
 }

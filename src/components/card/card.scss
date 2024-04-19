@@ -25,7 +25,12 @@
     padding: 30px 15px;
 }
 
-
 .card__headline {
     margin-bottom: 10px;
+}
+
+.card__article-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--res-blue);
 }
