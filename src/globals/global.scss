@@ -4,6 +4,7 @@
     --res-blue-active: #1368a0;
     --res-green: #a0d2b4;
     --res-green-active: #80cea0;
+    --res-green-bg: #e5f1ea;
     --res-black-bg: #dedfe7;
     --res-orange: #f07850;
     --res-breakpoint: 600px;
@@ -14,11 +15,27 @@
     padding: 0;
 }
 
-body {
-    width: 80%;
-    margin: 0 auto;
-}
-
 .headline {
     margin: 1rem 0 1rem 0;
+}
+
+.section {
+    display: block;
+    padding: 10px 15px;
+
+    &--blue-bg {
+        background-color: var(--res-blue-bg);
+    }
+
+    &--black-bg {
+        background-color: var(--res-black-bg);
+    }
+
+    &--green-bg {
+        background-color: var(--res-green-bg);
+    }
+
+    @media (min-width: $breakpoint) {
+        padding: 30px 10%;
+    }
 }

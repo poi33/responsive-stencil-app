@@ -14,76 +14,97 @@
 <body>
   <h1 class="headline">Persijn stencil app</h1>
 
-  <h2 class="headline">Tabs components</h2>
-  <res-tabs>
-    <res-tab name="image">
-      <p>Lorem ipsum</p>
-      <img src="https://picsum.photos/200/300" />
-    </res-tab>
-    <res-tab name="text">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo leo sit amet libero pharetra, nec rutrum
-        orci varius. Pellentesque egestas urna tempor, dignissim magna ac, tempus purus. Donec non porttitor velit. Etiam
-        mollis eleifend quam sed mattis. Duis vel eros purus. Nam vel sem ipsum. Maecenas pretium iaculis felis, et laoreet
-        neque suscipit ut. Curabitur tristique tortor sed laoreet lobortis. In dignissim fringilla tortor vitae suscipit.
-        Sed ut ex dapibus, efficitur massa non, molestie lacus. Aenean at ornare massa. </p>
-    </res-tab>
-    <res-tab name="large image">
-      <img width="2000" height="2000" src="https://picsum.photos/2000/3000" />
-    </res-tab>
-  </res-tabs>
-  <res-tabs active="0" align="vertical">
-    <res-tab name="first">
-      <p>Lorem ipsum</p>
-      <img src="https://picsum.photos/200/300" />
-    </res-tab>
-    <res-tab name="second">
-      <p>Foobar</p>
-      <img src="https://picsum.photos/300/300" />
-    </res-tab>
-    <res-tab name="third">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo leo sit amet libero pharetra, nec rutrum
-        orci varius. Pellentesque egestas urna tempor, dignissim magna ac, tempus purus. Donec non porttitor velit. Etiam
-        mollis eleifend quam sed mattis. Duis vel eros purus. Nam vel sem ipsum. Maecenas pretium iaculis felis, et laoreet
-        neque suscipit ut. Curabitur tristique tortor sed laoreet lobortis. In dignissim fringilla tortor vitae suscipit.
-        Sed ut ex dapibus, efficitur massa non, molestie lacus. Aenean at ornare massa. </p>
-    </res-tab>
-    <res-tab name="other">
-      <img width="2000" height="2000" src="https://picsum.photos/2000/3000" />
-    </res-tab>
-  </res-tabs>
-  <h2 class="headline">Cards</h2>
-  <res-card-layout>
-    <article>
-      <img src="https://picsum.photos/200/200" alt="random stock image"/>
-      <h3>Article header</h3>
-      <p>description of the article</p>
-    </article>
-    <article>
-      <img src="https://picsum.photos/200/200" alt="random stock image"/>
-      <h3>Article header</h3>
-      <p>description of the article</p>
-    </article>
-    <article>
-      <img src="https://picsum.photos/200/200" alt="random stock image"/>
-      <h3>Article header</h3>
-      <p>description of the article</p>
-    </article>
-    <article>
-      <img src="https://picsum.photos/200/200" alt="random stock image"/>
-      <h3>Article header</h3>
-      <p>description of the article</p>
-    </article>
-    <article>
-      <img src="https://picsum.photos/200/200" alt="random stock image"/>
-      <h3>Article header</h3>
-      <p>description of the article</p>
-    </article>
-    <article>
-      <img src="https://picsum.photos/200/200" alt="random stock image"/>
-      <h3>Article header</h3>
-      <p>description of the article</p>
-    </article>
-  </res-card-layout>
+  <section class="section section--black-bg">
+    <h2 class="headline">Tabs component</h2>
+    <res-tabs>
+      <res-tab name="image">
+        <p>Lorem ipsum</p>
+        <img src="https://picsum.photos/200/300" alt="stock image for demonstration" />
+      </res-tab>
+      <res-tab name="text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo leo sit amet libero pharetra, nec
+          rutrum
+          orci varius. Pellentesque egestas urna tempor, dignissim magna ac, tempus purus. Donec non porttitor velit.
+          Etiam
+          mollis eleifend quam sed mattis. Duis vel eros purus. Nam vel sem ipsum. Maecenas pretium iaculis felis, et
+          laoreet
+          neque suscipit ut. Curabitur tristique tortor sed laoreet lobortis. In dignissim fringilla tortor vitae
+          suscipit.
+          Sed ut ex dapibus, efficitur massa non, molestie lacus. Aenean at ornare massa. </p>
+      </res-tab>
+      <res-tab name="large image">
+        <img width="2000" height="2000" src="https://picsum.photos/2000/3000" alt="stock image for demonstration" />
+      </res-tab>
+    </res-tabs>
+  </section>
+  <section class="section">
+    <h2 class="headline">Tabs component vertical</h2>
+    <res-tabs active="0" align="vertical">
+      <res-tab name="first">
+        <p>Lorem ipsum</p>
+        <img src="https://picsum.photos/200/300" alt="stock image for demonstration" />
+      </res-tab>
+      <res-tab name="second">
+        <p>Foobar</p>
+        <img src="https://picsum.photos/300/300" alt="stock image for demonstration" />
+      </res-tab>
+      <res-tab name="third">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo leo sit amet libero pharetra, nec
+          rutrum
+          orci varius. Pellentesque egestas urna tempor, dignissim magna ac, tempus purus. Donec non porttitor velit.
+          Etiam
+          mollis eleifend quam sed mattis. Duis vel eros purus. Nam vel sem ipsum. Maecenas pretium iaculis felis, et
+          laoreet
+          neque suscipit ut. Curabitur tristique tortor sed laoreet lobortis. In dignissim fringilla tortor vitae
+          suscipit.
+          Sed ut ex dapibus, efficitur massa non, molestie lacus. Aenean at ornare massa. </p>
+      </res-tab>
+      <res-tab name="other">
+        <img width="2000" height="2000" src="https://picsum.photos/2000/3000" alt="stock image for demonstration" />
+      </res-tab>
+    </res-tabs>
+  </section>
+  <section class="section section--green-bg">
+    <h2 class="headline">Cards</h2>
+    <res-card-layout>
+      <res-card
+        imageUrl="https://picsum.photos/200/200"
+        imageAlt="random stock image"
+        imagePos="bottom"
+        headline="Article header"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo leo sit amet libero pharetra, nec rutrum
+      orci varius. Pellentesque egestas urna tempor, dignissim magna ac, tempus purus.">
+      </res-card>
+      <res-card
+        imageUrl="https://picsum.photos/200/200"
+        imageAlt="random stock image"
+        headline="Article header"
+        description="description of the article">
+      </res-card>
+      <res-card
+        imageUrl="https://picsum.photos/200/200"
+        imageAlt="random stock image"
+        headline="Article header"
+        description="description of the article">
+      </res-card>
+      <res-card
+        headline="Article header"
+        description="description of the article">
+      </res-card>
+      <res-card
+        imageUrl="https://picsum.photos/200/200"
+        imageAlt="random stock image"
+        headline="Article header"
+        description="description of the article">
+      </res-card>
+      <res-card
+        imageUrl="https://picsum.photos/200/200"
+        imageAlt="random stock image"
+        headline="Article header"
+        description="description of the article">
+      </res-card>
+    </res-card-layout>
+  </section>
 </body>
 
 </html>

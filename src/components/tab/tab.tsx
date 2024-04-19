@@ -6,7 +6,10 @@ import { Component, h, Prop } from '@stencil/core';
     shadow: true,
 })
 
-
+/**
+ * Handle if the individual tab should be rendered or not.
+ * Possible to toggle with active prop
+ */
 export class Tab {
 
     @Prop() active: boolean;

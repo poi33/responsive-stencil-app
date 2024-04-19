@@ -9,7 +9,9 @@ export namespace Components {
     interface ResCard {
         "description": string;
         "headline": string;
-        "imageUrl": string;
+        "imagealt": string;
+        "imagepos": 'top' | 'center' | 'bottom';
+        "imageurl": string;
     }
     interface ResCardLayout {
     }
@@ -58,7 +60,9 @@ declare namespace LocalJSX {
     interface ResCard {
         "description"?: string;
         "headline"?: string;
-        "imageUrl"?: string;
+        "imagealt"?: string;
+        "imagepos"?: 'top' | 'center' | 'bottom';
+        "imageurl"?: string;
     }
     interface ResCardLayout {
     }

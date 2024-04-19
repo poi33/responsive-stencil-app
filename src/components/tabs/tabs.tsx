@@ -1,19 +1,18 @@
-import { Component, h, Prop, Element } from '@stencil/core';
+import { Component, h, Prop, Element, Fragment } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
   tag: 'res-tabs',
   styleUrl: 'tabs.scss',
   shadow: true,
+
 })
 /**
- * Handle conditional rendering of tabs.
+ * Handle state of all tabs.
  * Handles switching and passes the render state down to the res-tabs
  * Defaults to the first res-tab in the children
  */
 export class Tabs {
-  children: Array<Element>;
-
   @Element() host: HTMLElement;
 
   @Prop() active: string = "0";
@@ -24,20 +23,16 @@ export class Tabs {
     this.host.setAttribute('active', nextActive.toString());
   }
 
-  componentWillLoad() {
-    this.children = Array.from(this.host.children) || Array();
-  }
-
   render() {
     const activeIndex = parseInt(this.active);
-    this.children.forEach((element, index) => {
+    const childElements = Array.from(this.host.children);
+    childElements.forEach((element, index) => {
       element.setAttribute('active', (index == activeIndex).toString());
     });
-
-    return <section class={classNames([
-      "tabs",
-      this.align == 'vertical' && 'tabs--vertical'
-    ])}>
+    return <div class={classNames([
+        "tabs",
+        this.align == 'vertical' && 'tabs--vertical'
+      ])}>
       <header class="tabs__header">
         <nav class={
           classNames([
@@ -46,7 +41,7 @@ export class Tabs {
           ])}
             dir="ltr">
           {
-            this.children.map((element, index) => {
+            childElements.map((element, index) => {
               const name = element.getAttribute("name") || '';
 
               return <button
@@ -70,6 +65,6 @@ export class Tabs {
       <div id="tab-frame" role="tabpanel" aria-labelledby={`tab-btn-${activeIndex}`}>
         <slot></slot>
       </div>
-    </section>
+    </div>
   }
 }

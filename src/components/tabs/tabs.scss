@@ -3,12 +3,13 @@
 }
 
 .tabs {
-    width: 100%;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 100%;
     padding-top: 1rem;
 
     @media (min-width: $breakpoint) {
         &--vertical {
-            display: grid;
             grid-template-columns: 100px calc(100% - 100px);
             justify-items: stretch;
 
